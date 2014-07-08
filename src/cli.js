@@ -200,7 +200,7 @@ function loadIgnores(exclude, excludePath) {
 
   return lines
     .filter(function (line) {
-      return !!line.trim();
+      return !!line.trim() && !/^#/.test(line);
     })
     .map(function (line) {
       if (line[0] === "!")
